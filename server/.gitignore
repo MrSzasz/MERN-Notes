@@ -1,0 +1,5 @@
+
+*.backup
+notes.txt
+.env
+*.env
