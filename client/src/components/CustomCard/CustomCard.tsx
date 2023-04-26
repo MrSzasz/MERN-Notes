@@ -1,24 +1,25 @@
 import { FaTrash } from "react-icons/fa";
 
 const CustomCard = ({
-  title = "title",
-  noteContent = "noteContent",
-  date = "dd/mm/yy",
+  note,
   modalFn,
   // userFn,
   deleteFn,
+  setNote,
 }) => {
   return (
     <div
       onClick={() => {
         modalFn();
+        setNote(note);
         // userFn();
       }}
+      id={note.id}
       className="w-[24%] h-64 flex flex-col justify-between bg-gray-800 border-gray-700 rounded-lg border py-5 px-4 min-w-[10em] cursor-default"
     >
       <div>
         <h4 className="text-gray-800 dark:text-gray-100 font-bold mb-3">
-          {title}
+          {note.title}
         </h4>
         <p
           style={{
@@ -29,12 +30,12 @@ const CustomCard = ({
           }}
           className="text-gray-800 dark:text-gray-100 text-sm"
         >
-          {noteContent}
+          {note.noteContent}
         </p>
       </div>
       <div>
         <div className="flex items-center justify-between text-gray-800 dark:text-gray-100">
-          <p className="text-sm">{date}</p>
+          <p className="text-sm">{note.date}</p>
           <button
             className="w-8 h-8 rounded-full bg-red-600  dark:text-gray-800 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-black"
             aria-label="edit note"
