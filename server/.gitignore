@@ -3,3 +3,4 @@
 notes.txt
 .env
 *.env
+node_modules
