@@ -25,7 +25,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
         port: 4000
     }, resolve))
 
-    console.log("server ready")
+    console.log("server ready on port 4000, http://localhost:4000/ or http://localhost:4000/graphql")
 }
 
 export default startApolloServer
